@@ -15,7 +15,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.s?css$/i,
+        test: /\.(s[ac]|c)ss$/i,
         use: [MiniCSSExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'], // every array in webpack reads from right to left
       },
       {

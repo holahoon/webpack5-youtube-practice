@@ -23,3 +23,17 @@ use: [MiniCSSExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'
 ### browsers list
 Both `postcss` and `babel` will look at the `.browserslistrc` to see which browser it needs to support.
 `.browserslistrc` file kind of lets you be more specific on targeting older browsers. By doing so, it will create [vendor prefix](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix) in your built `dist` `css` file.
+
+### babel
+
+[`@babel/preset-env`](https://babeljs.io/docs/en/babel-preset-env) - is a smart preset that allows you to use the latest JavaScript without needing to micromanage which syntax transforms.
+
+[`@babel/react-env`](https://babeljs.io/docs/en/babel-preset-react) - for adding react with babel.
+```javascript
+// babel.config.js
+module.exports = {
+  presets: ['@babel/preset-env', ['@babel/preset-react', { runtime: 'automatic' }]],
+};
+```
+This allows you not need to import React when working with JSX in your file.
+

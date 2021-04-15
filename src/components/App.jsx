@@ -1,5 +1,7 @@
 import Recipes from "./Recipes";
 import "../styles/index.scss";
+import swordImg from "../images/swc-sword.png";
+import swordSvg from "../images/sword.svg";
 
 const App = () => {
   return (
@@ -9,9 +11,12 @@ const App = () => {
           <section>
             <h1>Oh hi there! this is from React</h1>
           </section>
-        </main>
 
-        <Recipes />
+          <img src={swordImg} alt="sword" width="250" />
+          <img src={swordSvg} alt="sword svg" width="250" />
+
+          <Recipes />
+        </main>
       </section>
     </>
   );

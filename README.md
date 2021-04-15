@@ -37,3 +37,10 @@ module.exports = {
 ```
 This allows you not need to import React when working with JSX in your file.
 
+### dealing with files
+
+In previous webpack (prior to webpack 5), you would have to install `file loader` or `url loader`
+
+### in package.json
+
+`"clean": "rm -rf dist"` just deletes `dist` folder

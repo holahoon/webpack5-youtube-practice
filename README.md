@@ -44,3 +44,25 @@ In previous webpack (prior to webpack 5), you would have to install `file loader
 ### in package.json
 
 `"clean": "rm -rf dist"` just deletes `dist` folder
+
+### React refresh webpack plugin
+[npm react-refresh-webpack-plugin](https://www.npmjs.com/package/react-refresh-webpack-plugin)
+
+```bash
+$ npm install -D @pmmmwh/react-refresh-webpack-plugin react-refresh
+```
+
+```javascript
+// [ babel.config.js ]
+const plugins = [];
+
+if (process.env.NODE_ENV !== "production") plugins.push("react-refresh/babel");
+
+module.exports = {
+  presets: ["@babel/preset-env", ["@babel/preset-react", { runtime: "automatic" }]],
+  plugins: plugins
+};
+```
+
+> This check was needed because react-refresh babel should only be enabled in development
+> This is also needed in webpack.config.js file as well

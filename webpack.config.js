@@ -1,4 +1,7 @@
+const path = require("path");
 const MiniCSSExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 let mode = "development";
 let target = "web"; // to solve postcss - browserslist bug ( by default, target is set to 'web' )
@@ -13,6 +16,7 @@ module.exports = {
   target: target, // to solve postcss - browserslist bug
 
   output: {
+    path: path.resolve(__dirname, "dist"),
     assetModuleFilename: "images/[hash][ext][query]" // creates an images directory and puts all of the images inside
   },
 
@@ -51,7 +55,11 @@ module.exports = {
     ]
   },
 
-  plugins: [new MiniCSSExtractPlugin()],
+  plugins: [
+    new CleanWebpackPlugin(),
+    new MiniCSSExtractPlugin(),
+    new HtmlWebpackPlugin({ template: "./src/index.html" })
+  ],
 
   resolve: {
     extensions: [".js", ".ts", ".jsx", ".tsx"]

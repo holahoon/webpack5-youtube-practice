@@ -1,4 +1,6 @@
 import Recipes from "./Recipes";
+import Board from "./Test";
+
 import "../styles/index.scss";
 import swordImg from "../images/swc-sword.png";
 import swordSvg from "../images/sword.svg";
@@ -16,6 +18,8 @@ const App = () => {
           <img src={swordSvg} alt="sword svg" width="250" />
 
           <Recipes />
+
+          <Board />
         </main>
       </section>
     </>

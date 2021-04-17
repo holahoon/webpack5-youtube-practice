@@ -16,8 +16,9 @@ if (process.env.NODE_ENV === "production") {
   // - production mode
   mode = "production";
   target = "browserslist"; // to solve postcss - browserslist bug
-} else {
-  // - development mode
+}
+if (process.env.SERVE) {
+  // - development mode ( build-dev throws an error so we needed to add the above and also in package.json file )
   plugins.push(new ReactRefreshWebpackPlugin());
 }
 
